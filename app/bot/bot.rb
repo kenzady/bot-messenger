@@ -5,6 +5,7 @@ include Facebook::Messenger
 Facebook::Messenger::Subscriptions.subscribe(access_token: ENV["ACCESS_TOKEN"])
 
 Bot.on :message do |message|
+  message.typing_on
   if message.text.include? "Bonjour"
     message.reply(text: "Bien le bonjour l'ami !")
   elsif message.text.include? "Yo"
