@@ -6,11 +6,11 @@ Facebook::Messenger::Subscriptions.subscribe(access_token: ENV["ACCESS_TOKEN"])
 
 Bot.on :message do |message|
   if message.text include? "Bonjour"
-    message.reply("Bien le bonjour l'ami !")
+    message.reply(text: "Bien le bonjour l'ami !")
   elsif message.text include? "Yo"
-    message.reply("Wesh ma gueule !")
+    message.reply(text: "Wesh ma gueule !")
   elsif message.text("Salut")
-    message.reply("Salut salut mon petit loup ! :)")
+    message.reply(text: "Salut salut mon petit loup ! :)")
   else
     message.reply("Ne pas hésiter à dire bonjour, je ne suis pas ton chien...")
   end
