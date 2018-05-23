@@ -12,6 +12,6 @@ Bot.on :message do |message|
   elsif message.text.include? "Salut"
     message.reply(text: "Salut salut mon petit loup ! :)")
   else
-    message.reply("Ne pas hésiter à dire bonjour, je ne suis pas ton chien...")
+    message.reply(text: "Ne pas hésiter à dire bonjour, je ne suis pas ton chien...")
   end
 end
