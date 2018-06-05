@@ -4,6 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.4.3'
 
 gem 'facebook-messenger'
+# delivering high-quality responsive images and videos
+gem 'cloudinary'
+# gem to upload files associated to Models
+gem 'carrierwave', '~> 1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
