@@ -36,6 +36,6 @@ end
 
 Bot.on :message do |message|
   if message.text.include? 'Sévèrement'
-    message.reply(text: "Ça tombe bien #{postback.recipient}, je suis là pour t'aider ! Qu'est ce qui cause ton stress en ce moment ?")
+    message.reply(text: "Ça tombe bien, je suis là pour t'aider ! Qu'est ce qui cause ton stress en ce moment ?")
   end
 end
