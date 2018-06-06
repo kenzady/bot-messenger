@@ -34,13 +34,8 @@ Bot.on :message do |message|
     )
 end
 
-Bot.on :postback do |postback|
-  postback.sender    # => { 'id' => '1008372609250235' }
-  postback.recipient # => { 'id' => '2015573629214912' }
-  postback.sent_at   # => 2016-04-22 21:30:36 +0200
-  postback.payload   # => 'EXTERMINATE'
-
-  if postback.payload == '1'
+Bot.on :message do |message|
+  if message.text.include? 'Sévèrement'
     message.reply(text: "Ça tombe bien #{postback.recipient}, je suis là pour t'aider ! Qu'est ce qui cause ton stress en ce moment ?")
   end
 end
