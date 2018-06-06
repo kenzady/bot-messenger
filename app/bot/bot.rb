@@ -41,6 +41,6 @@ Bot.on :postback do |postback|
   postback.payload   # => 'EXTERMINATE'
 
   if postback.payload == '1'
-    puts "Ça tombe bien #{postback.recipient}, je suis là pour t'aider ! Qu'est ce qui cause ton stress en ce moment ?"
+    message.reply(text: "Ça tombe bien #{postback.recipient}, je suis là pour t'aider ! Qu'est ce qui cause ton stress en ce moment ?")
   end
 end
