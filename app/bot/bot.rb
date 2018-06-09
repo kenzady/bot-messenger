@@ -1,4 +1,5 @@
 require 'facebook/messenger'
+require_relative 'controllers/application_controllers'
 
 include Facebook::Messenger
 
@@ -37,18 +38,5 @@ Bot.on :message do |message|
         }
       ]
       )
-  end
-end
-
-Facebook::Messenger::Profile.set({
-  get_started: {
-    payload: 'GET_STARTED_PAYLOAD'
-  }
-}, access_token: ENV['ACCESS_TOKEN'])
-
-
-Bot.on :postback do |postback|
-  if postback.payload == "GET_STARTED_PAYLOAD"
-    puts "Bonjour je m’appelle Delphos. Je suis ici pour t'aider à vivre mieux et pour vivre sans stress. Comment te sens-tu aujourd’hui ?"
   end
 end
