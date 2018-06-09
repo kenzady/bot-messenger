@@ -1,0 +1,2 @@
+class Delphosbot < ApplicationRecord
+end

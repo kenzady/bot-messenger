@@ -1,2 +1,0 @@
-class Bot < ApplicationRecord
-end

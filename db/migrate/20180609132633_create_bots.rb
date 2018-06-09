@@ -1,6 +1,6 @@
-class CreateBots < ActiveRecord::Migration[5.2]
+class CreateDelphosbots < ActiveRecord::Migration[5.2]
   def change
-    create_table :bots do |t|
+    create_table :delphosbots do |t|
 
       t.timestamps
     end
