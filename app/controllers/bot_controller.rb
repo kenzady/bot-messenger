@@ -1,8 +1,3 @@
-require 'facebook/messenger'
-
-include Facebook::Messenger
-
-Facebook::Messenger::Subscriptions.subscribe(access_token: ENV["ACCESS_TOKEN"])
 class BotController < Messenger::MessengerController
   def webhook
     #logic here
