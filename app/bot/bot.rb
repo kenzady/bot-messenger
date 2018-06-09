@@ -1,5 +1,4 @@
 require 'facebook/messenger'
-require_relative 'controllers/application_controllers'
 
 include Facebook::Messenger
 
@@ -24,19 +23,41 @@ Bot.on :message do |message|
         {
           content_type: 'text',
           title: 'Sévèrement stressé(e)!',
-          payload: '1'
+          payload: 'SEVERELY_STRESSED'
         },
         {
           content_type: 'text',
           title: 'Moyennement stressé(e)!',
-          payload: '2'
+          payload: 'SOMEWHAT_STRESSED'
         },
         {
           content_type: 'text',
           title: 'Peu/pas stressé(e)!',
-          payload: '3'
+          payload: 'NOT_STRESSED'
         }
       ]
       )
   end
+end
+
+Facebook::Messenger::Profile.set({
+  get_started: {
+    payload: 'GET_STARTED_PAYLOAD'
+  }
+}, access_token: ENV['ACCESS_TOKEN'])
+
+
+Bot.on :postback do |postback|
+  if postback.payload == "GET_STARTED_PAYLOAD"
+    puts "Bonjour je m’appelle Delphos. Je suis ici pour t'aider à vivre mieux et pour vivre sans stress. Comment te sens-tu aujourd’hui ?"
+  end
+
+  if postback.payload == "SEVERELY_STRESSED" || "SOMEWHAT_STRESSED"
+    puts "Ça tombe bien, je suis là pour t'aider ! Qu'est ce qui cause ton stress en ce moment ?"
+  end
+
+  if postback.payload == "NOT_STRESSED"
+    puts "cool"
+  end
+
 end
