@@ -40,11 +40,11 @@ Bot.on :message do |message|
   end
 end
 
-# Facebook::Messenger::Profile.set({
-#   get_started: {
-#     payload: 'GET_STARTED_PAYLOAD'
-#   }
-# }, access_token: ENV['ACCESS_TOKEN'])
+Facebook::Messenger::Profile.set({
+   get_started: {
+     payload: 'LETS_START'
+   }
+ }, access_token: ENV['ACCESS_TOKEN'])
 
 
 Bot.on :postback do |postback|
