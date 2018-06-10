@@ -56,16 +56,39 @@ Bot.on :postback do |postback|
     postback.deliver(
       message: {
         text: "Bonjour je m’appelle Delphos. Je suis ici pour t'aider à vivre mieux et pour vivre sans stress. Comment te sens-tu aujourd’hui ?"
+        quick_replies: [
+        {
+          content_type: 'text',
+          title: 'Sévèrement stressé(e)!',
+          payload: 'SEVERELY_STRESSED'
+        },
+        {
+          content_type: 'text',
+          title: 'Moyennement stressé(e)!',
+          payload: 'SOMEWHAT_STRESSED'
+        },
+        {
+          content_type: 'text',
+          title: 'Peu/pas stressé(e)!',
+          payload: 'NOT_STRESSED'
+        }
+        ]
       }
     )
   end
-
-  if postback.payload == "SEVERELY_STRESSED" || "SOMEWHAT_STRESSED"
-    puts "Ça tombe bien, je suis là pour t'aider ! Qu'est ce qui cause ton stress en ce moment ?"
+  if message.text.include? 'Sévèrement'
+    message.mark_seen
+    message.typing_on
+    message.reply(text: "Ça tombe bien, je suis là pour t'aider ! Qu'est ce qui cause ton stress en ce moment ?")
   end
+end
 
-  if postback.payload == "NOT_STRESSED"
-    puts "cool"
-  end
+  # if postback.payload == "SEVERELY_STRESSED" || "SOMEWHAT_STRESSED"
+  #   puts "Ça tombe bien, je suis là pour t'aider ! Qu'est ce qui cause ton stress en ce moment ?"
+  # end
+
+  # if postback.payload == "NOT_STRESSED"
+  #   puts "cool"
+  # end
 
 end
