@@ -48,11 +48,13 @@ end
 
 
 Bot.on :postback do |postback|
+  postback.sender    # => { 'id' => '1008372609250235' }
+  postback.recipient # => { 'id' => '2015573629214912' }
+  postback.sent_at   # => 2016-04-22 21:30:36 +0200
+  postback.payload   # => 'EXTERMINATE'
   if postback.payload == "LETS_START"
-    postback.deliver(
-      message: {
-        text: "Bonjour je m’appelle Delphos. Je suis ici pour t'aider à vivre mieux et pour vivre sans stress. Comment te sens-tu aujourd’hui ?"
-      }
+    postback.reply(
+      text: "Bonjour je m’appelle Delphos. Je suis ici pour t'aider à vivre mieux et pour vivre sans stress. Comment te sens-tu aujourd’hui ?"
     )
   end
 
