@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.4.3'
 
 gem 'facebook-messenger'
-gem 'messenger-ruby'
+
 # delivering high-quality responsive images and videos
 gem 'cloudinary'
 # gem to upload files associated to Models

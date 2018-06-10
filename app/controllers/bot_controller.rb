@@ -32,5 +32,4 @@ class BotController < Messenger::MessengerController
   #     end
   #   end
   # end
-  def webhook
 end
