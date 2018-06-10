@@ -49,7 +49,7 @@ Facebook::Messenger::Profile.set({
 
 Bot.on :postback do |postback|
   if postback.payload == "GET_STARTED_PAYLOAD"
-    puts "Bonjour je m’appelle Delphos. Je suis ici pour t'aider à vivre mieux et pour vivre sans stress. Comment te sens-tu aujourd’hui ?"
+    postback.reply(text: "Bonjour je m’appelle Delphos. Je suis ici pour t'aider à vivre mieux et pour vivre sans stress. Comment te sens-tu aujourd’hui ?")
   end
 
   if postback.payload == "SEVERELY_STRESSED" || "SOMEWHAT_STRESSED"
